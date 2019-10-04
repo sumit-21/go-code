@@ -3,5 +3,6 @@ package main
 func main() {
 	// testPointersStructs()
 	// testMethods()
-	testInterfaces()
+	// testInterfaces()
+	testErrors()
 }
