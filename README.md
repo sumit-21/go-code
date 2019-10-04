@@ -1,5 +1,10 @@
 # go-code
-Basic Primary concepts of golang for studying.
+Primary concepts of GoLang for studying.
+
+References (for basics):
+https://www.geeksforgeeks.org/data-types-in-go/
+https://gobyexample.com/variables
+https://medium.com/rungo
 
 #GoLang#
 - a statically-typed, open source language by google.
@@ -9,8 +14,6 @@ Syntaxes and basics:
 1) Print: 
 	- ```fmt.Println("hello world")```
 2) Data types and variables:
-	- https://www.geeksforgeeks.org/data-types-in-go/
-	- https://gobyexample.com/variables
 	- ```var name = "Sumit"```
 	- ```var a, b = 14, 15```
 	- ```var c int```			----> default value 0
