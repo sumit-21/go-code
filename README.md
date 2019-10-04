@@ -112,7 +112,8 @@ Syntaxes and basics:
           fmt.Println("key:", k)
       }
 	- Strings are iterated on the basis of their unicode:
-	  ```for i, c := range "go" {
+	  ```
+	  for i, c := range "go" {
           fmt.Println(i, c)				----> Prints 0 103 and 1 111
       }
 11) Functions and multiple return values:
@@ -141,7 +142,7 @@ Syntaxes and basics:
 	- Slices can also be passes as arguement to variadic functions
 	  ```
 	  nums := []int{1, 2, 3, 4}
-      	  sum(nums...)
+	  sum(nums...)
 13) Closures:
 	- Functions returning another functions.
 	  ```
