@@ -5,5 +5,8 @@ func main() {
 	// testMethods()
 	// testInterfaces()
 	// testErrors()
-	testRoutines()
+	// testRoutines()
+	// testChannel()
+	// testBufferedChannel()
+	testChannelSynchronization()
 }
