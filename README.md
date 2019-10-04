@@ -2,9 +2,9 @@
 Primary concepts of GoLang for studying.
 
 References (for basics):
-https://www.geeksforgeeks.org/data-types-in-go/
-https://gobyexample.com/variables
-https://medium.com/rungo
+- https://www.geeksforgeeks.org/data-types-in-go/
+- https://gobyexample.com/variables
+- https://medium.com/rungo
 
 #GoLang#
 - a statically-typed, open source language by google.
