@@ -23,27 +23,29 @@ Syntaxes and basics:
 	- ```int64(d)```                	----> converting numeric type to int
 	- as per the context the variables type is taken into consideration
 4) For Loop:
-	- There is no while loop in golang.
-	- ```i := 1
-      for i <= 3 {
-          fmt.Println(i)
-          i = i + 1
-       }```
-	- ```for j := 7; j <= 9; j++ {
-        fmt.Println(j)
-      }```
-	- infinite for
-	  ```for {
-	  }```
+	- There is NO while loop in Go. Example:
+	 ```
+	 i := 1
+	 for i <= 3 {
+	 	fmt.Println(i)
+          	i = i + 1
+	 }
+	 for j := 7; j <= 9; j++ {
+	 	fmt.Println(j)
+	 }
+	 for {
+	 	// infinite for
+	 }
 5) If/Else:
-	- ```if 7%2 == 0 {
-          fmt.Println("7 is even")
-      } else {
+	```
+	if 7%2 == 0 {
+		fmt.Println("7 is even")
+	} else {
           fmt.Println("7 is odd")
-      }```
-	- ```if num := 9; num < 0 {
+      	}
+	if num := 9; num < 0 {
           fmt.Println(num, "is negative")
-      }```
+	}
 6) Switch:
 	- switch statement works on variables also.
 	- switch works without condition also, we need to provide the condition in case statement. This is similar to if statement.
@@ -60,7 +62,7 @@ Syntaxes and basics:
     }
     whatAmI(true)
 	whatAmI(1)
-    whatAmI("hey")```
+    whatAmI("hey")
 7) Arrays:
 	- ```var a [5]int```
 	- ```b := [5]int{1, 2, 3, 4, 5}```
@@ -70,12 +72,14 @@ Syntaxes and basics:
 	- ```s := make([]string, 3)```			----> length can be found out like this: ```len(s)```
 	- ```s = append(s, "e", "f")```
 	- Copy the slice
-	  ```c := make([]string, len(s))
-	  copy(c, s)```
+	  ```
+	  c := make([]string, len(s))
+	  copy(c, s)
 	- Slice operator
-	  ```l := s[2:5]
+	  ```
+	  l := s[2:5]
 	  l = s[:5]
-	  l = s[2:]```
+	  l = s[2:]
 	- Two dimensional slices:
 	  ```twoD := make([][]int, 3)
       for i := 0; i < 3; i++ {
@@ -84,7 +88,7 @@ Syntaxes and basics:
           for j := 0; j < innerLen; j++ {
               twoD[i][j] = i + j
           }
-      }```
+      }
 9) Maps:
 	- ```m := make(map[string]int)```
 	- Set key value : ```m["k1"] = 7```
@@ -99,50 +103,49 @@ Syntaxes and basics:
 	  for _, num := range nums {
 	  }
 	  for i, num := range nums {
-	  }```
+	  }
 	- ```kvs := map[string]string{"a": "apple", "b": "banana"}
 	  for k, v := range kvs {
 		  fmt.Printf("%s -> %s\n", k, v)
 	  }
 	  for k := range kvs {
           fmt.Println("key:", k)
-      }```
+      }
 	- Strings are iterated on the basis of their unicode:
 	  ```for i, c := range "go" {
           fmt.Println(i, c)				----> Prints 0 103 and 1 111
-      }```
+      }
 11) Functions and multiple return values:
-	- ```func plus(a int, b int) int {
-		  return a + b
-	  }```
-	- ```func plusPlus(a, b, c int) int {
-		  return a + b + c
-	  }```
 	- Function returning multiple values is like:
-	  ```func vals() (int, int) {
+	  ```
+	  func vals() (int, int) {
 		  return 3, 7
 	  }
 	  a, b := vals()
-	  _, c := vals()```
+	  _, c := vals()
 	- One of the best examples could be swap function:
-	  ```func swap(x, y string) (string, string) {
+	  ```
+	  func swap(x, y string) (string, string) {
 		return y, x
 	  }
 	  func main() {
 		a, b := swap("hello", "world")
 		fmt.Println(a, b)
-	  }```
+	  }
 12) Variadic Functions:
 	- Functions taking n number of inputs:
-	  ```func sum(nums ...int){}
+	  ```
+	  func sum(nums ...int){}
 	  sum(1,2)
-	  sum(1,2,3)```
+	  sum(1,2,3)
 	- Slices can also be passes as arguement to variadic functions
-	  ```nums := []int{1, 2, 3, 4}
-      sum(nums...)```
+	  ```
+	  nums := []int{1, 2, 3, 4}
+      	  sum(nums...)
 13) Closures:
 	- Functions returning another functions.
-	  ```func intSeq() func() int {
+	  ```
+	  func intSeq() func() int {
 		i := 0
 		return func() int {
 				i++
@@ -150,31 +153,35 @@ Syntaxes and basics:
 		}
 	  }
 	  nextInt := intSeq()
-	  fmt.Println(nextInt())```
+	  fmt.Println(nextInt())
 14) Recursion: same as in Java. Function calling itself.
 15) Pointers:
 	- Go uses pointers to pass variables by reference i.e. their memory locations.
 	- Pass values with * and access them with &.
-	  ```func zeroptr(iptr *int) {
+	  ```
+	  func zeroptr(iptr *int) {
 		  *iptr = 0
 	  }
-	  zeroptr(&i)```
+	  zeroptr(&i)
 16) Structs:
 	- Define a struct
-	  ```type person struct {
+	  ```
+	  type person struct {
 		  name string
 		  age  int
 	  }
 	  fmt.Println(person{"Bob", 20})
 	  fmt.Println(person{name: "Alice", age: 30})```
 	- You can use a pointer for struct also.
-	  ```testP := person{name: "Tester"}
+	  ```
+	  testP := person{name: "Tester"}
 	  testPP := &testP
 	  testPP.name = "Tester1"
-	  testPP.age = 21```
+	  testPP.age = 21
 17) Methods:
 	- On structs types, we can define methods in Go.
-	  ```type rect struct {
+	  ```
+	  type rect struct {
 		  width, height int
 	  }
 	  func (r *rect) area() int {//mutable, as pointers
@@ -184,27 +191,30 @@ Syntaxes and basics:
 		return 2*r.width + 2*r.height
 	  }
 	  r.area()
-	  r.perim()```
+	  r.perim()
 18) Interfaces:
 	- We can define interfaces with methods in Go.
 	- In order for stuct to implement interface we need to implement all the methods on the struct.
-	  ```type geometry interface {
+	  ```
+	  type geometry interface {
 		  area() float64
 		  perimeter() float64
-	  }```
+	  }
 19) Errors:
 	- There are no exceptions in Go.
 	- We can create new error in following way:
 	  ```errors.New(fmt.Sprintf("%s %d %s", "can't divide", num, "by 0"))```
 	- stucts can be used as custom errors. The struct should implement (define) the method Error().
-	  ```func (custErr *customError) Error() string {
+	  ```
+	  func (custErr *customError) Error() string {
 		  return fmt.Sprintf("%d - %s", custErr.arg, custErr.err)
-	  }```
+	  }
 	- Custom errors can be taken into variable and used like below:
-	 ``` _, err1 := DivideWithCustomError(60, 2)
+	 ```
+	  _, err1 := DivideWithCustomError(60, 2)
 	  custErr, boolVal := err1.(*customError)
 	  fmt.Print(custErr, " ")
-	  fmt.Println(boolVal)```
+	  fmt.Println(boolVal)
 20) Routines:
 	- Goroutines are lightweight threads (asynchronous) of execution.
 	- To run a function as routine specify it with "go".				----> ```go printData("test data")```
