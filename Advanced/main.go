@@ -4,5 +4,6 @@ func main() {
 	// testPointersStructs()
 	// testMethods()
 	// testInterfaces()
-	testErrors()
+	// testErrors()
+	testRoutines()
 }

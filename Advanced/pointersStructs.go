@@ -7,7 +7,7 @@ type person struct {
 	age  int
 }
 
-func CreateStructPointer(name string) *person {
+func createStructPointer(name string) *person {
 	p := person{name: name}
 	p.age = 30
 	return &p
@@ -17,7 +17,7 @@ func testPointersStructs() {
 	fmt.Println(person{"Sumit", 28})
 	fmt.Println(person{"Sam", 29})
 	fmt.Println(person{name: "Sid"})
-	fmt.Println(CreateStructPointer("Nicolas"))
+	fmt.Println(createStructPointer("Nicolas"))
 	fmt.Println(&person{"Nihal", 30})
 	testP := person{name: "Tester"}
 	fmt.Println(testP.name)

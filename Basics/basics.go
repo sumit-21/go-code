@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func DataTypesVariables() {
+func dataTypesVariables() {
 	fmt.Println("go" + "lang")
 	fmt.Println("1+1 =", 1+1)
 	fmt.Println("7.0/3.0 =", 7.0/3.0)
@@ -14,7 +14,7 @@ func DataTypesVariables() {
 	fmt.Println(!true)
 }
 
-func VarDeclarations() {
+func varDeclarations() {
 	var a = "initial"
 	fmt.Println(a)
 
@@ -31,7 +31,7 @@ func VarDeclarations() {
 	fmt.Println(f)
 }
 
-func SwitchCase() {
+func switchCase() {
 	i := 2
 	fmt.Print("Write ", i, " as ")
 	switch i {
@@ -73,7 +73,7 @@ func SwitchCase() {
 	whatAmI("hey")
 }
 
-func Slices() {
+func slices() {
 	s := make([]string, 3)
 	fmt.Println("emp:", s)
 
@@ -116,7 +116,7 @@ func Slices() {
 	fmt.Println("2d: ", twoD)
 }
 
-func LoopRangeMap() {
+func loopRangeMap() {
 
 	nums := []int{2, 3, 4}
 	sum := 0
@@ -153,7 +153,7 @@ func zeroptr(iptr *int) {
 	*iptr = 0
 }
 
-func Pointer() {
+func pointer() {
 	i := 1
 	fmt.Println("initial:", i)
 
@@ -167,10 +167,10 @@ func Pointer() {
 }
 
 func main() {
-	DataTypesVariables()
-	VarDeclarations()
-	SwitchCase()
-	Slices()
-	LoopRangeMap()
-	Pointer()
+	dataTypesVariables()
+	varDeclarations()
+	switchCase()
+	slices()
+	loopRangeMap()
+	pointer()
 }
